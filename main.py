@@ -2,7 +2,6 @@ import random, math, csv
 
 coordinates = []
 
-
 centroids = []
 
 cluster_map = []
@@ -25,22 +24,14 @@ with open('coordinates.csv', mode='r') as file:
 
 for i in range(numClusters):
   centroids.append(random.choice(coordinates))
-  # exec("cluster" + str(i) + "_points = " + str([]))
-
-
-#sum = 0
 
 
 for coordinate in coordinates:
   distances = []
   for centroid in centroids:
     distances.append(calc_distance(coordinate, centroid))
-  # distance_to_b = calc_distance(coordinate, clusterb)
 
   cluster_map.append(distances.index(min(distances)))
-
-
-# print(f'Initial sum: {sum}')
 
 
 def calc_centroid(index):
